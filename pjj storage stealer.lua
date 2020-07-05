@@ -6,7 +6,7 @@ local PLAYER = ""
 -->> finally made this, messy as all hell so im gonna have to clean it ;(
 -->> ROBLOX has a stroke if you use custom functions, shouldn't be a suprise though
 local function GetPlayerFromString(s)
-    s = s:lower() -- Remove this if you want case sensitivity
+    s = s:lower()
     for _, player in ipairs(game.Players:GetPlayers()) do
         if s == player.Name:lower():sub(1, #s) then
             return player
@@ -17,27 +17,7 @@ end
 local template
 local plr2 = GetPlayerFromString(PLAYER)
 plr2 = plr2.Name
---[[
-    1 = stand name
-    2 = req
-    3 = hamon
-    4 = vamp
-    5 = rock
-    6 = b2m 1?
-    7 = b2m 2?
-    8 = b2m 3?
-    9 = b2m 4?
-    10 = potency
-    11 = resilience
-    12 = speed
-    13 = ulf
-    14 = stand level
-    15 = blessing
-    16 = sub fusion
-    17 = trait
-    18 = spin
-    19 = ID
-    ]]
+
 local blessings = {
     -- all the blessings
     ["Holy"] = "All cooldowns are halved.",
@@ -151,25 +131,7 @@ local ss15, ss15T = game.Players[plr2].storedstand15.Value, {}
 local ss16, ss16T = game.Players[plr2].storedstand16.Value, {}
 local ss17, ss17T = game.Players[plr2].storedstand17.Value, {}
 local ss18, ss18T = game.Players[plr2].storedstand18.Value, {}
-local s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18 =
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11",
-    "12",
-    "13",
-    "14",
-    "15",
-    "16",
-    "17",
-    "18"
+local s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18 ="1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"
 local caps = string.upper(plr2)
 local funnystring = ""
 local blessing = ""
@@ -180,8 +142,6 @@ local function AddToTable(STR, TBL)
     end
 end
 local function lol(FINAL, TBL)
-    -- print(type(TBL))
-    -- warn("!"..FINAL)
     if TBL[1] ~= "None" then -- no no-stand:(
         template = {
             "USER: " .. plr2 .. "\n",
@@ -221,7 +181,6 @@ local function lol(FINAL, TBL)
             end
         end
         for i, v in pairs(fusions) do
-            --warn(i, v) --this is dumb so ignore it
             if string.find(TBL[16], i) then -- find the fusion the user has
                 warn(TBL[16]) -- for debugging
                 if TBL[16] == "None" then
@@ -266,41 +225,7 @@ local function lol(FINAL, TBL)
     end
 end
 
-AddToTable(ss1, ss1T)
-AddToTable(ss2, ss2T)
-AddToTable(ss3, ss3T)
-AddToTable(ss4, ss4T)
-AddToTable(ss5, ss5T)
-AddToTable(ss6, ss6T)
-AddToTable(ss7, ss7T)
-AddToTable(ss8, ss8T)
-AddToTable(ss9, ss9T)
-AddToTable(ss10, ss10T)
-AddToTable(ss11, ss11T)
-AddToTable(ss12, ss12T)
-AddToTable(ss13, ss13T)
-AddToTable(ss14, ss14T)
-AddToTable(ss15, ss15T)
-AddToTable(ss16, ss16T)
-AddToTable(ss17, ss17T)
-AddToTable(ss18, ss18T)
+AddToTable(ss1,ss1T); AddToTable(ss2,ss2T); AddToTable(ss3,ss3T); AddToTable(ss4,ss4T); AddToTable(ss5,ss5T); AddToTable(ss6,ss6T); AddToTable(ss7,ss7T); AddToTable(ss8,ss8T); AddToTable(ss9,ss9T); AddToTable(ss10,ss10T); AddToTable(ss11,ss11T); AddToTable(ss12,ss12T); AddToTable(ss13,ss13T); AddToTable(ss14,ss14T); AddToTable(ss15,ss15T); AddToTable(ss16,ss16T); AddToTable(ss17,ss17T); AddToTable(ss18,ss18T); 
 
-lol(s1, ss1T)
-lol(s2, ss2T)
-lol(s3, ss3T)
-lol(s4, ss4T)
-lol(s5, ss5T)
-lol(s6, ss6T)
-lol(s7, ss7T)
-lol(s8, ss8T)
-lol(s9, ss9T)
-lol(s10, ss10T)
-lol(s11, ss11T)
-lol(s12, ss12T)
-lol(s13, ss13T)
-lol(s14, ss14T)
-lol(s15, ss15T)
-lol(s16, ss16T)
-lol(s17, ss17T)
-lol(s18, ss18T)
+lol(s1,ss1T); lol(s2,ss2T); lol(s3,ss3T); lol(s4,ss4T); lol(s5,ss5T); lol(s6,ss6T); lol(s7,ss7T); lol(s8,ss8T); lol(s9,ss9T); lol(s10,ss10T); lol(s11,ss11T); lol(s12,ss12T); lol(s13,ss13T); lol(s14,ss14T); lol(s15,ss15T); lol(s16,ss16T); lol(s17,ss17T); lol(s18,ss18T); 
 warn("---------------------------------------------")
