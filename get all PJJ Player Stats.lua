@@ -9,7 +9,7 @@ if writefile then
 end -- writefile check, added before actual script just because
 print(exploitWrite) -- debug
 local function GetPlayerFromString(s)
-    s = s:lower() -- Remove this if you want case sensitivity
+    s = s:lower()
     for _, player in ipairs(game.Players:GetPlayers()) do
         if s == player.Name:lower():sub(1, #s) then
             return player
@@ -114,31 +114,28 @@ for i, v in pairs(game.Players:GetPlayers()) do
             ["ChocolateDisco"] = "Grants Projectile Dislocation."
         }
 
-        local plr2 = GetPlayerFromString(PLAYER)
-        plr2 = plr2.Name
-
-        local pltrait = game.Players[plr2].Trait.Value
-        local plendurance = game.Players[plr2].Endurance.Value
-        local pllvl = game.Players[plr2].Level.Value
-        local plmoney = game.Players[plr2].Money.Value
-        local plpower = game.Players[plr2].Power.Value
-        local plspecial = game.Players[plr2].Special.Value
-        local plstand = game.Players[plr2].Stand.Value
-        local plworth = game.Players[plr2].Worth.Value
-        local plblessing = game.Players[plr2].Blessing.Value
-        local plfusion = game.Players[plr2].FusedStand.Value
-        local plstandlvl = game.Players[plr2].StandLevel.Value
-        local plreq = game.Players[plr2].Requiem.Value
-        local plulf = game.Players[plr2].IsUltimate.Value
-        local plhamon = game.Players[plr2].IsHamon.Value
-        local plvampire = game.Players[plr2].IsVampire.Value
-        local plrock = game.Players[plr2].IsRock.Value
-        local plspin = game.Players[plr2].IsSpin.Value
-        local plstolen1 = game.Players[plr2].stolenability1.Value
-        local plstolen2 = game.Players[plr2].stolenability2.Value
-        local plstolen3 = game.Players[plr2].stolenability3.Value
-        local plstolen4 = game.Players[plr2].stolenability4.Value
-        local caps = string.upper(plr2)
+        local pltrait = game.Players[PLAYER].Trait.Value
+        local plendurance = game.Players[PLAYER].Endurance.Value
+        local pllvl = game.Players[PLAYER].Level.Value
+        local plmoney = game.Players[PLAYER].Money.Value
+        local plpower = game.Players[PLAYER].Power.Value
+        local plspecial = game.Players[PLAYER].Special.Value
+        local plstand = game.Players[PLAYER].Stand.Value
+        local plworth = game.Players[PLAYER].Worth.Value
+        local plblessing = game.Players[PLAYER].Blessing.Value
+        local plfusion = game.Players[PLAYER].FusedStand.Value
+        local plstandlvl = game.Players[PLAYER].StandLevel.Value
+        local plreq = game.Players[PLAYER].Requiem.Value
+        local plulf = game.Players[PLAYER].IsUltimate.Value
+        local plhamon = game.Players[PLAYER].IsHamon.Value
+        local plvampire = game.Players[PLAYER].IsVampire.Value
+        local plrock = game.Players[PLAYER].IsRock.Value
+        local plspin = game.Players[PLAYER].IsSpin.Value
+        local plstolen1 = game.Players[PLAYER].stolenability1.Value
+        local plstolen2 = game.Players[PLAYER].stolenability2.Value
+        local plstolen3 = game.Players[PLAYER].stolenability3.Value
+        local plstolen4 = game.Players[PLAYER].stolenability4.Value
+        local caps = string.upper(PLAYER)
         local funnystring = ""
         local blessing = ""
         local fusion = ""
@@ -181,7 +178,7 @@ for i, v in pairs(game.Players:GetPlayers()) do
             end
             stuff = {
                 -- write whats needed for the file
-                "USER: " .. plr2 .. "\n",
+                "USER: " .. PLAYER .. "\n",
                 "-------------------------------------------------- \n",
                 "STAND: " .. plstand,
                 "FUSION: " .. fusion,
@@ -209,7 +206,7 @@ for i, v in pairs(game.Players:GetPlayers()) do
         else
             stuff = {
                 -- write whats needed for the file
-                "USER: " .. plr2 .. "\n",
+                "USER: " .. PLAYER .. "\n",
                 "-------------------------------------------------- \n",
                 "STAND: " .. plstand,
                 "FUSION: " .. fusion,

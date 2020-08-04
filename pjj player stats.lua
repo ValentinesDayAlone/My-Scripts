@@ -12,7 +12,7 @@ print(exploitWrite) -- debug
 
 -- > begin script
 local function GetPlayerFromString(s)
-    s = s:lower() -- Remove this if you want case sensitivity
+    s = s:lower()
     for _, player in ipairs(game.Players:GetPlayers()) do
         if s == player.Name:lower():sub(1, #s) then
             return player
